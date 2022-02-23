@@ -3,10 +3,10 @@ var
    fahrenheit, celsius: real
 
 inicio
-   Escreval("Temperatura em Fahrenheit")
+   Escreval("Diga a temperatura em Fahrenheit")
    leia(fahrenheit)
    celsius <- (fahrenheit - 32)* 5/9
-   Escreval(celsius)
+   Escreval(celsius:4:2)
    
    se celsius <= 15 entao
    Escreval("Está frio")
