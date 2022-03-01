@@ -6,6 +6,10 @@ opcaoMenu, continuar : literal
 
 inicio
 
+Escreval("Seja Bem Vindo ao Conversor de Temperatura e Moeda.")
+Escreval("Favor informar a cotação do dólar em relação ao real")
+leia(cotacao)
+
 Repita
    Escreval("Opções do conversor: ")
    Escreval("1 - Celsius para Fahrenheit")
@@ -46,8 +50,7 @@ Repita
     fimse
     
     se opcaoMenu = "3" entao
-      Escreval("Diga qual é a cotação do dólar em relação ao real")
-      leia(cotacao)
+
       Escreval("Diga o valor em Reais")
       leia(reais)
       dolares <- reais / cotacao
@@ -64,8 +67,7 @@ Repita
     fimse
     
     se opcaoMenu = "4" entao
-      Escreval("Diga qual é a cotação do dólar em relação ao real")
-      leia(cotacao)
+
       Escreval("Diga o valor em Dólares")
       leia(dolares)
       reais <- dolares * cotacao
