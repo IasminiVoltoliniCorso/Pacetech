@@ -12,7 +12,7 @@ inicio
    Escreval("Está frio")
    
    senao
-        se celsius >= 28 entao
+        se celsius <= 28 entao
         Escreval("Está agradável")
         
         senao celsius > 28 entao
@@ -20,5 +20,5 @@ inicio
         fimse
    fimse
 
-// Seção de Comandos 
+
 fimalgoritmo
