@@ -1,30 +1,29 @@
 algoritmo "Matrizes"
 
 var
-escada : vetor[1..5, 1..5] de literal
+escada : vetor[1..20] de inteiro
 i,j, n : inteiro
 contador : inteiro
 
-
 inicio
 
-para i de 1 ate 5 faca
-para j de 1 ate 5 faca
-     escada[i,j] <- "1"
-fimpara
-fimpara
 escreval("Informe o valor de N: ")
 leia(n)
+   se n > 20 entao
+      Escreval("Operação invalida.")
+      interrompa
+   senao
 
-contador <- 1
+      contador <- 1
 
- para i de 1 ate n faca
-      para j de 1 ate contador faca
-           escreva (j)
-      fimpara
-             escreval()
-             contador <- contador + 1
- fimpara
+       para i de 1 ate n faca
+            para j de 1 ate contador faca
+                 escreva (j)
+            fimpara
+                   escreval()
+                   contador <- contador + 1
+       fimpara
+   fimse
 
 
 
