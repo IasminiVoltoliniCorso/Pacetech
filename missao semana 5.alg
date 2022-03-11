@@ -1,12 +1,13 @@
 algoritmo "Conversor de Temperatura"
 
 var
-celsius : vetor[1..4] de literal
-fahrenheit : vetor[1..4] de literal
-hora : vetor[1..4] de literal
-opcaoMenu : literal
+temperatura, hora : vetor[1..4] de real
 
-procedimento menu()
+opcaoMenu : literal
+i, j : inteiro
+auxTemperatura, auxHora : real
+
+procedimento apresentarMenu()
 inicio
 Escreval("Opções do conversor: ")
 Escreval("1 - Celsius para Fahrenheit")
@@ -15,75 +16,69 @@ Escreval("3 - Sair")
 leia(opcaoMenu)
 fimprocedimento
 
-procedimento converterCelsius()
-var
-i : inteiro
-
+procedimento acumulador()
 inicio
+    para i de 1 ate 4 faca
+         escreva("Informe a hora: ")
+         leia(hora[i])
+         
+         escreva("Informe a temperatura", i,": ")
+         leia(temperatura[i])
+         escreval()
+    fimpara
+fimprocedimento
 
+
+funcao converter(): real
+inicio
+apresentarMenu()
+    se opcaoMenu = "1" entao
+       para i de 1 ate 4 faca
+            escreval("A temperatura", temperatura[i], "ºC, registrada às ",hora[i],"h corresponde à ",((tempetaruta[i]*1.8)+32):4:2, "ºF.")
+       fimpara
+    senao
+       se opcaoMenu = "2" entao
+          para i de 1 ate 4 faca
+               escreval("A temperatura", temperatura[i], "ºF, registrada às ",hora[i],"h corresponde à ",((tempetaruta[i]-32)/1.8):4:2, "ºC.")
+          fimpara
+       fimse
+    fimse
+fimfuncao
+
+procedimento mostrarHistorico()
+inicio
 para i de 1 ate 4 faca
-   Escreval("Favor informar a hora:")
-   leia(hora[i])
-   Escreval("Diga a temperatura em Celsius:")
-   leia(celsius[i])
-   fahrenheit <- (1.8 * celsius[i]) + 32
-
+     para j de 1 ate 4 faca
+          se temperatura[j] > temperatura[i] entao
+             auxTemperatura <- temperatura[i]
+             temperatura[i] <- temperatura[j]
+             temperatura[j] <- auxTemperatura
+             
+             auxHora <- hora[i]
+             hora[i] <- hora[j]
+             hora[j] <- auxHora
+          fimse
+     fimpara
 fimpara
 fimprocedimento
 
-procedimento converterFahrenheit()
-var
-i : inteiro
-
 inicio
 
-para i de 1 ate 4 faca
-   Escreval("Favor informar a hora:")
-   leia(hora[i])
-   Escreval("Diga a temperatura em Fahrenheit")
-   leia(fahrenheit[i])
-   celsius <- (fahrenheit - 32) / 1.8
-   escreval(celsius:4:2)
-fimpara
-
-fimprocedimento
-
-procedimento resultadoCaso1()
-var
-
-inicio
-para i de 1 ate 4 faca
-     Escreval("Temperatura ", celsius,"ºC, foi registrada às ", hora,"h, correspodente a ", fahrenheit,"ºF")
-fimpara
-
-fimprocedimento
-
-procedimento resultadoCaso2()
-var
-
-inicio
-para i de 1 ate 4 faca
-     Escreval("Temperatura ", fahrenheit,"ºF, foi registrada às ", hora,"h, correspodente a ", celsius,"ºC")
-fimpara
-
-fimprocedimento
-
-inicio
+Escreval("BEM VINDO(A) AO CONVERSOR DE TEMPERATURA.")
 
 Repita
-   menu()
+   apresentarMenu()
       Escolha opcaoMenu
          caso "1"
-              converterCelsius()
-              resultadoCaso1()
-
+              acumulador()
+              converter()
          caso "2"
-              converterFahrenheit()
-              resultadoCaso1()
+              acumulador()
+              converter()
          caso "3"
               escreval("Fim.")
          outrocaso
-              escreval("Opção inválida.")
+              escreval("Opção inválida. Tente novamente.")
               escreval("---------------------------")
       fimescolha
 ate opcaoMenu = "3"
