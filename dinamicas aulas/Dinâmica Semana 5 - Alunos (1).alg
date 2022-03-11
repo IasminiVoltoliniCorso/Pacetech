@@ -1,8 +1,5 @@
 algoritmo "Ordenacao"
-// Função :
-// Autor :
-// Data : 09/08/2021
-// Seção de Declarações
+
 var
 numeros: vetor[1..6] de inteiro
 aux: inteiro
