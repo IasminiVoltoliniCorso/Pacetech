@@ -18,6 +18,7 @@ fimprocedimento
 
 procedimento acumulador()
 inicio
+
     para i de 1 ate 4 faca
          escreva("Informe a hora: ")
          leia(hora[i])
@@ -29,21 +30,21 @@ inicio
 fimprocedimento
 
 
-funcao converter(): real
+procedimento converter()
 inicio
-apresentarMenu()
+mostrarHistorico()
     se opcaoMenu = "1" entao
        para i de 1 ate 4 faca
-            escreval("A temperatura", temperatura[i], "ºC, registrada às ",hora[i],"h corresponde à ",((tempetaruta[i]*1.8)+32):4:2, "ºF.")
+            escreval("A temperatura", temperatura[i], "ºC, registrada às ",hora[i],"h corresponde à ",((temperatura[i]*1.8)+32):4:2, "ºF.")
        fimpara
     senao
        se opcaoMenu = "2" entao
           para i de 1 ate 4 faca
-               escreval("A temperatura", temperatura[i], "ºF, registrada às ",hora[i],"h corresponde à ",((tempetaruta[i]-32)/1.8):4:2, "ºC.")
+               escreval("A temperatura", temperatura[i], "ºF, registrada às ",hora[i],"h corresponde à ",((temperatura[i]-32)/1.8):4:2, "ºC.")
           fimpara
        fimse
     fimse
-fimfuncao
+fimprocedimento
 
 procedimento mostrarHistorico()
 inicio
@@ -82,5 +83,6 @@ Repita
               escreval("---------------------------")
       fimescolha
 ate opcaoMenu = "3"
+
 
 fimalgoritmo
