@@ -18,7 +18,6 @@ fimprocedimento
 
 procedimento acumulador()
 inicio
-
     para i de 1 ate 4 faca
          escreva("Informe a hora: ")
          leia(hora[i])
@@ -28,7 +27,6 @@ inicio
          escreval()
     fimpara
 fimprocedimento
-
 
 procedimento converter()
 inicio
@@ -83,6 +81,5 @@ Repita
               escreval("---------------------------")
       fimescolha
 ate opcaoMenu = "3"
-
 
 fimalgoritmo
