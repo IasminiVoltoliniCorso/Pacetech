@@ -1,4 +1,4 @@
-package testeMissaoSemana6;
+package MissaoSemana6;
 
 import java.util.Scanner;
 
