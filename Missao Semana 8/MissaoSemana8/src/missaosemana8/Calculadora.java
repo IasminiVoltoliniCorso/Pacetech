@@ -416,16 +416,16 @@ public class Calculadora extends javax.swing.JFrame {
     private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
         // Igual
         valor2 = Double.parseDouble(txtResultado.getText());
-        if(operacao == "Soma"){
+        if("Soma".equals(operacao)){
             txtResultado.setText(String.valueOf(valor1 + valor2));           
         }
-        if(operacao == "Subtracao"){
+        if("Subtracao".equals(operacao)){
             txtResultado.setText(String.valueOf(valor1 - valor2));
         }
-        if(operacao == "Multiplicacao"){
+        if("Multiplicacao".equals(operacao)){
             txtResultado.setText(String.valueOf(valor1 * valor2));            
         }
-        if(operacao == "Disivao"){
+        if("Disivao".equals(operacao)){
             txtResultado.setText(String.valueOf(valor1 / valor2));         
         }        
     }//GEN-LAST:event_jButton48ActionPerformed
